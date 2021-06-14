@@ -1,0 +1,91 @@
+<html>
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body >
+    <h1 id=h1>Login</h1>
+
+    <div id= details>
+        <label for="ename"><b>Email</b></label>
+        <input id = usname type="text" placeholder="Enter Email" name="uname" required>
+        
+        <br>
+        <label for="psw"><b>Password</b></label>
+        
+        <input  id = pwd type="password" placeholder="Enter Password" name="psw" required>
+        <br>
+        <button id = login type="submit">Login</button>
+    
+      </div>
+      <script >
+          
+
+document.getElementById("usname").addEventListener("mouseover", function() {
+    // document.getElementById("usname").document.backgroundColor = "green";
+    document.body.style.backgroundColor = "#33ccff";
+
+});
+    
+document.getElementById("usname").addEventListener("mouseout", function() {
+    document.body.style.backgroundColor = "white";
+});
+
+
+
+
+document.getElementById("pwd").addEventListener("mouseover", function() {
+    
+    document.body.style.backgroundColor = "#ff9999";
+
+});
+    
+document.getElementById("pwd").addEventListener("mouseout", function() {
+    document.body.style.backgroundColor = "white";
+});
+
+
+function required(id) 
+   {
+    var n=document.getElementById(id).value;
+     if (n.length == 0)
+      {  
+          
+         return false; 
+      }  	
+      return true; 
+    } 
+
+
+var loginButton = document.getElementById("login");
+
+login.onclick = function(){
+    
+     let email =   required("usname")
+     let password  = required("pwd");
+     
+     if(email == false && password == false)
+        alert("Email and password are compulsory");
+     else if(email ==false)
+     {
+        alert( "Email  is required");  	
+     }
+     else if( password == false)
+        {
+            alert( "Password  is required");  	
+        }
+        
+    else
+        alert("Login Successfull")
+    
+    
+};
+
+
+
+
+      </script>
+</body>
+
+</html>
+
